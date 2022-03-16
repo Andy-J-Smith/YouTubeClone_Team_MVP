@@ -1,11 +1,11 @@
-from .models import Comment
+from .models import Reply
 from rest_framework import serializers
 
 # <<<<<<<<<<<<<<<<< EXAMPLE FOR STARTER CODE USE <<<<<<<<<<<<<<<<<
 
 
-class CommentsSerializer(serializers.ModelSerializer):
+class ReplySerializer(serializers.ModelSerializer):
     class Meta:
-        model = Comment
+        model = Reply
         fields = ['id', 'user', 'comment', 'text',]
         depth = 1
