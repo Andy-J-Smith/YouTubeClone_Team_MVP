@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "d4409d57-7119-4339-bfae-1f3a18bc6341",
+		"_postman_id": "56bd81a8-aa3e-4f83-ad67-c57a1e561cca",
 		"name": "DRF_JWT_Backend",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -216,6 +216,268 @@
 							"path": [
 								"api",
 								"cars",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Comments",
+			"item": [
+				{
+					"name": "GET all comments (unprotected)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/comments/all/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"comments",
+								"all",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET comments for user (protected)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ4MTU2ODM5LCJpYXQiOjE2NDcyOTI4MzksImp0aSI6ImJjYzJhZTUzOTRlYzQ3OThiNjI0YTcwYTYzYjcxOThmIiwidXNlcl9pZCI6MSwidXNlcm5hbWUiOiJqanZlZ2EiLCJmaXJzdF9uYW1lIjoiIn0.l9ATW5CpWF2TGniqVgU1I-a8LkuqgLQ4ok3tJh6asAA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/comments/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"comments",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST new comment for user (protected)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ4MTU3MjczLCJpYXQiOjE2NDcyOTMyNzMsImp0aSI6IjIyMDQ4YTg2NzEzMTQyMmZhZjJmNDNmYmI2MTExZDg2IiwidXNlcl9pZCI6MiwidXNlcm5hbWUiOiJkYW50aGVtYW4iLCJmaXJzdF9uYW1lIjoiRGFuaWVsIn0.DeTe47E7-9eCr7xKE22m3CvFMDj0Sxye5A6ndwJ024M",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user\": \"yourusername1@\",\n    \"video_id\": \"django for dummies\",\n    \"text\": \"how to mess up django project...LOL\",\n    \"likes\": 0,\n    \"dislikes\": 0\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/comments/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"comments",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT update comment (protected)",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ4MTU3MjczLCJpYXQiOjE2NDcyOTMyNzMsImp0aSI6IjIyMDQ4YTg2NzEzMTQyMmZhZjJmNDNmYmI2MTExZDg2IiwidXNlcl9pZCI6MiwidXNlcm5hbWUiOiJkYW50aGVtYW4iLCJmaXJzdF9uYW1lIjoiRGFuaWVsIn0.DeTe47E7-9eCr7xKE22m3CvFMDj0Sxye5A6ndwJ024M",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user\": \"yourusername1@\",\n    \"video_id\": \"django for dummies\",\n    \"text\": \"how to mess up django project...LOL\",\n    \"likes\": 0,\n    \"dislikes\": 0\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/comments/2/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"comments",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Replies",
+			"item": [
+				{
+					"name": "GET all replies (unprotected)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/replies/all/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"replies",
+								"all",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET replies for user (protected)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ4MTU2ODM5LCJpYXQiOjE2NDcyOTI4MzksImp0aSI6ImJjYzJhZTUzOTRlYzQ3OThiNjI0YTcwYTYzYjcxOThmIiwidXNlcl9pZCI6MSwidXNlcm5hbWUiOiJqanZlZ2EiLCJmaXJzdF9uYW1lIjoiIn0.l9ATW5CpWF2TGniqVgU1I-a8LkuqgLQ4ok3tJh6asAA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/replies/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"replies",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST new reply for user (protected)",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ4MTU3MjczLCJpYXQiOjE2NDcyOTMyNzMsImp0aSI6IjIyMDQ4YTg2NzEzMTQyMmZhZjJmNDNmYmI2MTExZDg2IiwidXNlcl9pZCI6MiwidXNlcm5hbWUiOiJkYW50aGVtYW4iLCJmaXJzdF9uYW1lIjoiRGFuaWVsIn0.DeTe47E7-9eCr7xKE22m3CvFMDj0Sxye5A6ndwJ024M",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user\": \"yourusername1@\",\n    \"comment\": 2,\n    \"text\": \"not sure what text you want here...LOL\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/replies/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"replies",
 								""
 							]
 						}
