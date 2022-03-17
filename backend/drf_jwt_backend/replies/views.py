@@ -36,6 +36,9 @@ def user_reply(request):
 @api_view(['PUT'])
 @permission_classes([IsAuthenticated])
 def update_reply(request):
-    serializer = ReplySerializer(replies, data=request.data)
+    reply = get_object_or_404(Reply, pk=pk)
+    serializer = ReplySerializer(reply, data=request.data)
     serializer.is_valid(raise_exception=True)
+    serializer.save()
+    return Response(serializer.data, status=status.htt)
 
