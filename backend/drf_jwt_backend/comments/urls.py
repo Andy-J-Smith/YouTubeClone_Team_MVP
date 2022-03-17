@@ -1,9 +1,9 @@
-from django.urls import path
-from cars import views
+from django.urls import path, include
+from comments import views
 
 # <<<<<<<<<<<<<<<<< EXAMPLE FOR STARTER CODE USE <<<<<<<<<<<<<<<<<
 
 urlpatterns = [
-    path(''),
-    # path('all/'),
+    path('', views.user_comment),
+    path('all/', views.get_all_comments),
 ]
