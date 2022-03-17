@@ -33,4 +33,9 @@ def user_reply(request):
         serializer = ReplySerializer(replies, many=True)
         return Response(serializer.data)
 
+@api_view(['PUT'])
+@permission_classes([IsAuthenticated])
+def update_reply(request):
+    serializer = ReplySerializer(replies, data=request.data)
+    serializer.is_valid(raise_exception=True)
 
