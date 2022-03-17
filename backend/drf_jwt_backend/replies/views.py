@@ -32,3 +32,5 @@ def user_reply(request):
         replies = Reply.objects.filter(user_id=request.user.id)
         serializer = ReplySerializer(replies, many=True)
         return Response(serializer.data)
+
+

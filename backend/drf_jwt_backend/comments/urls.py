@@ -6,4 +6,5 @@ from comments import views
 urlpatterns = [
     path('', views.user_comment),
     path('all/', views.get_all_comments),
+    path('<int:pk>/', views.update_comment),
 ]
