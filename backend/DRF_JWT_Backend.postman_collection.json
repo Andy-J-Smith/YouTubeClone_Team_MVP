@@ -228,12 +228,24 @@
 			"name": "Comments",
 			"item": [
 				{
-					"name": "GET all comments (unprotected)",
+					"name": "GET comments by video_id (unprotected)",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
 						"method": "GET",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "            \"id\": 1,\n            \"video_id\": \"django for dummies\",\n            \"text\": \"how to mess up django project...LOL\",\n            \"likes\": 0,\n            \"dislikes\": 0,",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/comments/all/",
+							"raw": "http://127.0.0.1:8000/api/comments/hElLo123",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -245,8 +257,7 @@
 							"path": [
 								"api",
 								"comments",
-								"all",
-								""
+								"hElLo123"
 							]
 						}
 					},
@@ -301,13 +312,13 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ4MTU3MjczLCJpYXQiOjE2NDcyOTMyNzMsImp0aSI6IjIyMDQ4YTg2NzEzMTQyMmZhZjJmNDNmYmI2MTExZDg2IiwidXNlcl9pZCI6MiwidXNlcm5hbWUiOiJkYW50aGVtYW4iLCJmaXJzdF9uYW1lIjoiRGFuaWVsIn0.DeTe47E7-9eCr7xKE22m3CvFMDj0Sxye5A6ndwJ024M",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjQ4NDg0ODk1LCJpYXQiOjE2NDc2MjA4OTUsImp0aSI6IjA4NjcwYzQ4N2Y2NDQwMGJiM2FlOWQ4OTRiMmFjZWMzIiwidXNlcl9pZCI6NiwidXNlcm5hbWUiOiJkYW50aGVtYW4iLCJmaXJzdF9uYW1lIjoiRGFuaWVsIn0.FO9DR4ORAiO9aab2KZVqVfvcYtT7wH5eSFRz472zZRQ",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"user\": \"yourusername1@\",\n    \"video_id\": \"django for dummies\",\n    \"text\": \"how to mess up django project...LOL\",\n    \"likes\": 0,\n    \"dislikes\": 0\n\n}",
+							"raw": "{\n    \"user\": \"yourusername1@\",\n    \"video_id\": \"hElLo123\",\n    \"text\": \"how to mess up django project...LOL\",\n    \"likes\": 0,\n    \"dislikes\": 0\n\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -427,7 +438,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/replies/",
+							"raw": "http://127.0.0.1:8000/api/replies/3/",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -439,6 +450,7 @@
 							"path": [
 								"api",
 								"replies",
+								"3",
 								""
 							]
 						}
@@ -466,7 +478,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:8000/api/replies/",
+							"raw": "http://127.0.0.1:8000/api/replies/3/",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -478,6 +490,7 @@
 							"path": [
 								"api",
 								"replies",
+								"3",
 								""
 							]
 						}

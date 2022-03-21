@@ -11,10 +11,10 @@ from .serializers import CommentsSerializer
 
 @api_view(['GET'])
 @permission_classes([AllowAny])
-def get_all_comments(request):
-    comments = Comment.objects.filter(Comment.video_id)
+def get_video_comments(request, video_id):
+    comments = Comment.objects.filter(video_id=video_id)
     serializer = CommentsSerializer(comments, many=True)
-    return Response(serializer.data)
+    return Response(serializer.data, status=status.HTTP_200_OK)
 
 
 @api_view(['GET', 'POST'])
@@ -39,7 +39,7 @@ def update_comment(request, pk):
     updated = get_object_or_404(Comment, pk=pk)
     serializer=CommentsSerializer(updated,data=request.data)
     serializer.is_valid(raise_exception=True)
-    serializer.save()
+    serializer.save(user=request.user)
     return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 
