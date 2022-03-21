@@ -7,6 +7,7 @@ const [searchRequest, setSearchRequest] = useState('');
 const handleSubmit = (event) => {
     event.preventDefault();
     console.log(searchRequest);
+    props.getSearchResults(searchRequest)
 }
     return ( 
     

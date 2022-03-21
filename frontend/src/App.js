@@ -2,7 +2,7 @@
 import { Routes, Route } from "react-router-dom";
 import "./App.css";
 import axios from "axios";
-// import SearchPage from './pages/SearchPage/SearchPage';
+import SearchPage from './pages/SearchPage/SearchPage';
 
 // Pages Imports
 import HomePage from "./pages/HomePage/HomePage";
@@ -26,7 +26,7 @@ function App() {
           element={
             <PrivateRoute>
               <HomePage />
-              {/* <SearchPage/> */}
+              <SearchPage/>
             </PrivateRoute>
           }
         />
