@@ -16,7 +16,6 @@ const Navbar = () => {
             <b>Team MVP YouTube Clone</b>
           </Link>
         </li>
-        <div><SearchBar/></div>
         <li>
           {user ? (
             <button onClick={logoutUser}>Logout</button>

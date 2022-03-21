@@ -20,13 +20,14 @@ function App() {
   return (
     <div>
       <Navbar />
+      <SearchPage/>
       <Routes>
         <Route
           path="/"
           element={
             <PrivateRoute>
               <HomePage />
-              <SearchPage/>
+              
             </PrivateRoute>
           }
         />
