@@ -22,7 +22,7 @@ import PrivateRoute from "./utils/PrivateRoute";
 
 function App() {
 
-  const [currentVideo, setCurrentVideo] = useState([]);
+  const [currentVideo, setCurrentVideo] = useState(['aZGzwEjZrXc']);
   console.log(currentVideo)
 
   return (

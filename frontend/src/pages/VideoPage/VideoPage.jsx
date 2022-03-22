@@ -5,19 +5,19 @@ import React, { useState, useEffect } from "react";
 const VideoPage = (props) => {
   const [relatedVideo, setRelatedVideo] = useState();
 
-  async function getRelatedVideos(currentVideo) {
+  async function getRelatedVideos(id) {
     let response = await axios.get(
-      `https://www.googleapis.com/youtube/v3/search?relatedToVideoId=${props.currentVideo}&type=video&key=AlzaSyBeDuwLRCEuSKbuXL_x1QED9VXNdipYR_M&maxResults=4&part=snippet`
+      `https://www.googleapis.com/youtube/v3/search?relatedToVideoId=${id}&type=video&key=AIzaSyB--WnZi-41d2SSGsccN9FHWgPsp_Erh4I&maxResults=4&part=snippet`
     );
     console.log("Related Videos ", response.data);
     setRelatedVideo(response.data);
   }
 
   
-  // useEffect(() => {
-  //   getRelatedVideos();
-  //   console.log(relatedVideo)
-  // },[])
+  useEffect(() => {
+   getRelatedVideos(props.currentVideo); //This is where we passed down the current video props from app.js
+    console.log(relatedVideo)
+  },[props])
 
 
   // const handleClick = (event, id, title, description) => {
