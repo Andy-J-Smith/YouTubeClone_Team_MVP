@@ -1,3 +1,4 @@
+import { toHaveDescription } from "@testing-library/jest-dom/dist/matchers";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import SearchBar from "../../components/SearchBar/SearchBar";
@@ -6,7 +7,6 @@ import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 const SearchPage = (props) => {
   const [searchResults, setSearchResults] = useState([]);
   const [videoId, setVideoId] = useState("dQw4w9WgXcQ");
-  const [relatedVideo, setRelatedVideo] = useState([]);
   const asApi = 'AIzaSyB--WnZi-41d2SSGsccN9FHWgPsp_Erh4I';
   const afApi = 'AlzaSyBKkwwk2xiNqsE_mrtJ3q6zByuYJTbTJms';
   const jpApi = 'AlzaSyBeDuwLRCEuSKbuXL_x1QED9VXNdipYR_M';
@@ -25,29 +25,40 @@ const SearchPage = (props) => {
     setVideoId(response.data.items);
   }
 
-  // useEffect(() => {
-  //   getSearchResults();
-  // }, []);
+//   function Videotoplay  (relatedVideo,setRelatedVideo){
+//     let snippet = {} => {
+//       const {title, thumbnails = {}, description = ('')}
+//     }
+// }
+
+const handleClick = (event, id, title, description) => {
+  event.preventDefault();
+  props.setCurrentVideo(id,title,description) //we are basically saving the most important data to setCurrentVideo
+  console.log('handleclick event was triggered');
+}
 
 
   return (
     <div>
       <SearchBar getSearchResults={getSearchResults} />
       <VideoPlayer videoId={videoId} />
-      <table>
+       <table>
         <tbody>
           {searchResults.map((searchResults, index)=> {
             return (
               <tr className="row" key={index}>
-                <td>{searchResults.id.videoId}</td>
-                <td>{searchResults.id.snippet}</td>
+                <td>
+                <input type="image" src={searchResults.snippet.thumbnails.default.url} alt="/" onClick={(event) => handleClick(event, searchResults.id.videoId, searchResults.snippet.title, searchResults.snippet.description)}/> {/* coded the onClick function into the image. Will create handleclick function above */}
+                {/* changed image to input to make it a clickable route. type = 'image' takes the src and alt from our img params */}
+                </td>
+                <td>{searchResults.snippet.title}</td>
+                <td>{searchResults.snippet.description}</td>
               </tr>
             )
           })}
 
         </tbody>
       </table>
-    
     </div>
   );
 };
