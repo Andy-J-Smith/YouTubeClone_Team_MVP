@@ -6,7 +6,7 @@ import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 const SearchPage = (props) => {
   const [searchResults, setSearchResults] = useState([]);
   const [videoId, setVideoId] = useState("dQw4w9WgXcQ");
-
+  const [relatedVideo, setRelatedVideo] = useState([]);
   const asApi = 'AIzaSyB--WnZi-41d2SSGsccN9FHWgPsp_Erh4I';
   const afApi = 'AlzaSyBKkwwk2xiNqsE_mrtJ3q6zByuYJTbTJms';
   const jpApi = 'AlzaSyBeDuwLRCEuSKbuXL_x1QED9VXNdipYR_M';
@@ -40,6 +40,7 @@ const SearchPage = (props) => {
             return (
               <tr className="row" key={index}>
                 <td>{searchResults.id.videoId}</td>
+                <td>{searchResults.id.snippet}</td>
               </tr>
             )
           })}
