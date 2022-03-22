@@ -8,8 +8,8 @@ const SearchPage = (props) => {
   const [searchResults, setSearchResults] = useState([]);
   const [videoId, setVideoId] = useState("dQw4w9WgXcQ");
   const asApi = 'AIzaSyB--WnZi-41d2SSGsccN9FHWgPsp_Erh4I';
-  const afApi = 'AlzaSyBKkwwk2xiNqsE_mrtJ3q6zByuYJTbTJms';
-  const jpApi = 'AlzaSyBeDuwLRCEuSKbuXL_x1QED9VXNdipYR_M';
+  const afApi = 'AIzaSyBKkwwk2xjNqsE_mrtJ3q6zByuYJTbTJms';
+  const jpApi = 'AIzaSyBgDuwLRCEuSKbuXL_x1QED9vXNdipYR_M';
 
   async function getSearchResults(search) {
     let response = await axios.get(
