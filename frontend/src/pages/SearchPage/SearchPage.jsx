@@ -19,17 +19,11 @@ const SearchPage = (props) => {
     setSearchResults(response.data.items);
   }
 
-  async function getRelatedVideos(videoId){
-    let response = await axios.get (`https://www.googleapis.com/youtube/v3/search?relatedToVideoId=${searchResults.id.videoId}&type=video&key=${asApi}&maxResults=4&part=snippet`)
-    console.log("video id ", response.data.items);
-    setVideoId(response.data.items);
-  }
-
-//   function Videotoplay  (relatedVideo,setRelatedVideo){
-//     let snippet = {} => {
-//       const {title, thumbnails = {}, description = ('')}
-//     }
-// }
+  // async function getRelatedVideos(videoId){
+  //   let response = await axios.get (`https://www.googleapis.com/youtube/v3/search?relatedToVideoId=${searchResults.id.videoId}&type=video&key=${asApi}&maxResults=4&part=snippet`)
+  //   console.log("video id ", response.data.items);
+  //   setVideoId(response.data.items);
+  // }
 
 const handleClick = (event, id, title, description) => {
   event.preventDefault();
@@ -41,7 +35,6 @@ const handleClick = (event, id, title, description) => {
   return (
     <div>
       <SearchBar getSearchResults={getSearchResults} />
-      <VideoPlayer videoId={videoId} />
        <table>
         <tbody>
           {searchResults.map((searchResults, index)=> {

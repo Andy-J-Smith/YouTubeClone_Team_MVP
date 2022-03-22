@@ -23,6 +23,7 @@ import PrivateRoute from "./utils/PrivateRoute";
 function App() {
 
   const [currentVideo, setCurrentVideo] = useState([]);
+  console.log(currentVideo)
 
   return (
     <div>
