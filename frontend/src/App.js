@@ -22,13 +22,13 @@ import PrivateRoute from "./utils/PrivateRoute";
 
 function App() {
 
-  const [currentVideo, setCurrentVideo] = useState(['aZGzwEjZrXc']);
+  const [currentVideo, setCurrentVideo] = useState('aZGzwEjZrXc');
   console.log(currentVideo)
 
   return (
     <div>
       <Navbar />
-      <SearchPage setCurrentVideo = {setCurrentVideo}/>
+      
       <Routes>
         <Route
           path="/"
@@ -36,6 +36,7 @@ function App() {
             <PrivateRoute>
               <HomePage currentVideo = {currentVideo}/>  //^passed currentVideo as props to homepage
               {/* <VideoPage currentVideo = {currentVideo}/> */}
+              <SearchPage setCurrentVideo = {setCurrentVideo}/>
             </PrivateRoute>
           }
         />

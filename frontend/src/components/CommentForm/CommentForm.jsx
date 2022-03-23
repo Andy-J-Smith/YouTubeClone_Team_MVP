@@ -7,7 +7,7 @@ import VideoPage from "../../pages/VideoPage/VideoPage";
 const CommentForm = (props) => {
   const [user, setUser] = useState("");             //  getting data from form holding it for handleComment function below
   const [comment, setComment] = useState("");       //^Hook//
-  const [videoId, setVideoId] = useState("");
+  const [video_id, setVideo_id] = useState("");
   const [comments, setComments] = useState("");
   const likes = 0;
   const dislikes = 0;
@@ -17,9 +17,9 @@ const CommentForm = (props) => {
                                                          //data staged before function calls//  
     event.preventDefault();                             //^prevents page from refreshing/reloading//
     let newComment = {
-      user: props.user,
+      // user: props.user,
       text: comment,
-      videoId: props.currentVideo[0],
+      video_id: props.currentVideo,
       likes: likes,
       dislikes: dislikes,
 
