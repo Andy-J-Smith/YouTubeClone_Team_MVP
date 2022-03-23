@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState, useEffect } from "react";
+import CommentForm from "../../components/CommentForm/CommentForm";
 // import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
 
 const VideoPage = (props) => {
@@ -44,6 +45,7 @@ const VideoPage = (props) => {
       })}
     </tbody>
   </table> */}
+  <CommentForm currentVideo = {props.currentVideo}/>
     </div>
   );
 };
