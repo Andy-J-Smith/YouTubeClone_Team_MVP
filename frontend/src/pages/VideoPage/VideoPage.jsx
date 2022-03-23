@@ -45,7 +45,7 @@ const VideoPage = (props) => {
       })}
     </tbody>
   </table> */}
-  <CommentForm currentVideo = {props.currentVideo}/>
+  {/* <CommentForm currentVideo = {props.currentVideo}/> */}
     </div>
   );
 };

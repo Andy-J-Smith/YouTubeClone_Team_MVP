@@ -34,8 +34,8 @@ function App() {
           path="/"
           element={
             <PrivateRoute>
-              <HomePage />
-              <VideoPage currentVideo = {currentVideo}/>
+              <HomePage currentVideo = {currentVideo}/>
+              {/* <VideoPage currentVideo = {currentVideo}/> */}
             </PrivateRoute>
           }
         />

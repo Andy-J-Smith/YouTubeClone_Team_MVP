@@ -3,8 +3,9 @@ import { useEffect, useState } from "react";
 import CommentForm from "../../components/CommentForm/CommentForm";
 import axios from "axios";
 import useAuth from "../../hooks/useAuth";
+import VideoPage from "../VideoPage/VideoPage";
 
-const HomePage = () => {
+const HomePage = (props) => {
   // The "user" value from this Hook contains the decoded logged in user information (username, first name, id)
   // The "token" value is the JWT token that you will send in the header of any request requiring authentication
   const [user, token] = useAuth();
@@ -34,7 +35,8 @@ const HomePage = () => {
             {car.year} {car.model} {car.make}
           </p>
         ))}
-        <CommentForm user={user.username}/>
+        <CommentForm user={user.username} currentVideo = {props.currentVideo}/>
+        <VideoPage currentVideo = {props.currentVideo}/>
     </div>
   );
 };
