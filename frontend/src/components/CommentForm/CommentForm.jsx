@@ -30,10 +30,14 @@ const CommentForm = (props) => {
   //   console.log(comment)
   // }
   async function addComment(newComment){  // this will send data to our backend to be saved in the Database
-    let response = await axios.post ('http://127.0.0.1:8000/comments/', newComment)  // this is same URL tested in postman 
+    let response = await axios.post ('http://127.0.0.1:8000/comments/', newComment);  // this is same URL tested in postman 
   console.log(response)
-  await getAllComments()
+  if (response.status === 201) {
+    await getAllComments();
   }
+  }
+
+
 
   const getAllComments= async()=>{   // this request will retrieve all of the comments from our database
     let response = await axios.get('http://127.0.0.1:8000/comments/');  //the URL we are using the same endpoint here that we tested in postman
