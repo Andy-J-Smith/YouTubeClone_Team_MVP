@@ -35,8 +35,8 @@ const HomePage = (props) => {
             {car.year} {car.model} {car.make}
           </p>
         ))}
-        <CommentForm user={user.username} currentVideo = {props.currentVideo}/>
-        <VideoPage currentVideo = {props.currentVideo}/>
+        <CommentForm user={user.username} currentVideo = {props.currentVideo}/> //^passed down user from this page as props and current video from App.js as props to Commentform
+        <VideoPage currentVideo = {props.currentVideo}/>  //^passed currentVideo from App.js to VideoPage as props from this page.
     </div>
   );
 };
