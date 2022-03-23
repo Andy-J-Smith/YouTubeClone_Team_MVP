@@ -13,7 +13,7 @@ const SearchPage = (props) => {
 
   async function getSearchResults(search) {
     let response = await axios.get(
-      `https://www.googleapis.com/youtube/v3/search?q=${search}&key=${asApi}&part=snippet&maxResults=4&type=video`
+      `https://www.googleapis.com/youtube/v3/search?q=${search}&key=${jpApi}&part=snippet&maxResults=4&type=video`
     );
     console.log("Search results ", response.data.items);
     setSearchResults(response.data.items);

@@ -9,14 +9,20 @@ const CommentForm = (props) => {
   const [comment, setComment] = useState("");       //^Hook//
   const [videoId, setVideoId] = useState("");
   const [comments, setComments] = useState("");
+  const likes = 0;
+  const dislikes = 0;
+
 
   function handleComment(event) {
                                                          //data staged before function calls//  
     event.preventDefault();                             //^prevents page from refreshing/reloading//
     let newComment = {
       user: props.user,
-      comment: comment,
+      text: comment,
       videoId: props.currentVideo[0],
+      likes: likes,
+      dislikes: dislikes,
+
     };
     console.log(newComment);
     addComment(newComment);

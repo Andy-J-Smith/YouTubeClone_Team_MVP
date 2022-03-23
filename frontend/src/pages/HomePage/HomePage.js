@@ -10,7 +10,7 @@ const HomePage = (props) => {
   // The "token" value is the JWT token that you will send in the header of any request requiring authentication
   const [user, token] = useAuth();
   const [cars, setCars] = useState([]);
-  console.log(token.token)
+  
 
   useEffect(() => {
     const fetchCars = async () => {
