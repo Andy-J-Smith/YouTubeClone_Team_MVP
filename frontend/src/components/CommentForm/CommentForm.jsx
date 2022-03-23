@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import VideoPage from "../../pages/VideoPage/VideoPage";
 
+
+
 const CommentForm = (props) => {
   const [user, setUser] = useState("");             //  getting data from form holding it for handleComment function below
   const [comment, setComment] = useState("");       //^Hook//
@@ -11,7 +13,7 @@ const CommentForm = (props) => {
                                                          //data staged before function calls//
     event.preventDefault();                             //^prevents page from refreshing/reloading//
     let newComment = {
-      user: user,
+      user: props.user,
       comment: comment,
       videoId: props.currentVideo,
     };
@@ -23,6 +25,7 @@ const CommentForm = (props) => {
     // newPost is the form data coming from CreatePost
     let tempComment = [...comments, comment]; // ...comment is grabbing all of the existing data and newComment is just adding that to it
     setComment(tempComment); // this is where we are actually saving all of our comment data to comment on line 8
+    console.log(comment)
   }
 
 

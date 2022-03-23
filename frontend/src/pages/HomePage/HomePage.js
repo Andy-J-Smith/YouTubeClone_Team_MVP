@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
-
+import CommentForm from "../../components/CommentForm/CommentForm";
 import axios from "axios";
 import useAuth from "../../hooks/useAuth";
 
@@ -34,6 +34,7 @@ const HomePage = () => {
             {car.year} {car.model} {car.make}
           </p>
         ))}
+        <CommentForm user={user.username}/>
     </div>
   );
 };
