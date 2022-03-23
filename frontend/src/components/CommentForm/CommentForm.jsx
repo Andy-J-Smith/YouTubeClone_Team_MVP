@@ -29,13 +29,43 @@ const CommentForm = (props) => {
   //   //setComment(tempComment); // this is where we are actually saving all of our comment data to comment on line 8
   //   console.log(comment)
   // }
-  async function addComment(newComment){  // this will send data to our backend to be saved in the Database
-    let response = await axios.post ('http://127.0.0.1:8000/comments/', newComment);  // this is same URL tested in postman 
-  console.log(response)
-  if (response.status === 201) {
-    await getAllComments();
-  }
-  }
+  // async function addComment(newComment){  // this will send data to our backend to be saved in the Database
+  //   try{
+  //   let response = await axios.post ('http://127.0.0.1:8000/api/comments/', newComment);  // this is same URL tested in postman 
+  // console.log(response)
+  // if (response.status === 201) {
+  //   await getAllComments();
+  // }
+  // }
+
+  async function addComment(newComment){
+    try {
+      let response = await axios.post('http://127.0.0.1:8000/api/comments/', newComment,{
+      headers: {
+        Authorization: "Bearer " + props.token,
+      },
+    });
+    setComment(response.data);
+   } catch (error){
+      console.log(error.message);
+    }
+  };
+
+  // useEffect(() => {
+  //   const addComment = async (newComment) => {
+  //     try {
+  //       let response = await axios.get("http://127.0.0.1:8000/api/comments/", {
+  //         headers: {
+  //           Authorization: "Bearer " + token,
+  //         },
+  //       });
+  //       setComment(response.data);
+  //     } catch (error) {
+  //       console.log(error.message);
+  //     }
+  //   };
+  //   fetchCars();
+  // }, [token]);
 
 
 
@@ -48,13 +78,13 @@ const CommentForm = (props) => {
 
   return (
     <form onSubmit={handleComment}>
-        <label>user</label>
+        {/* <label>user</label>
         <input type="text" value={user} onChange={(event)=> setUser(event.target.value)} />
         <label>videoId</label>
         <input type="text" value={videoId} onChange={(event)=> setVideoId(event.target.value)} /> 
-        <label>comment</label>
+        <label>comment</label> */}
         <input type="text" value={comment} onChange={(event)=> setComment(event.target.value)} />
-        <label>user</label>
+        {/* <label>user</label> */}
         <input type="submit" value='Add Comment' />
     </form>
   

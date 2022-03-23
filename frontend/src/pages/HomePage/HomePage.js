@@ -10,6 +10,7 @@ const HomePage = (props) => {
   // The "token" value is the JWT token that you will send in the header of any request requiring authentication
   const [user, token] = useAuth();
   const [cars, setCars] = useState([]);
+  console.log(token.token)
 
   useEffect(() => {
     const fetchCars = async () => {
@@ -26,6 +27,8 @@ const HomePage = (props) => {
     };
     fetchCars();
   }, [token]);
+
+  console.log(token)
   return (
     <div className="container">
       <h1>Home Page for {user.username}!</h1>
@@ -35,7 +38,7 @@ const HomePage = (props) => {
             {car.year} {car.model} {car.make}
           </p>
         ))}
-        <CommentForm user={user.username} currentVideo = {props.currentVideo}/> //^passed down user from this page as props and current video from App.js as props to Commentform
+        <CommentForm user={user.username} currentVideo = {props.currentVideo} token = {token}/> //^passed down user from this page as props and current video from App.js as props to Commentform
         <VideoPage currentVideo = {props.currentVideo}/>  //^passed currentVideo from App.js to VideoPage as props from this page.
     </div>
   );
