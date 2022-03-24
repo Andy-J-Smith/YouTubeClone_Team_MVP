@@ -15,14 +15,16 @@ const ReplyForm = (props) => {
         let newReply = {
 
             text: replies,
+            comment: props.comment.id,
         };
+            console.log(props.comment.id);
           console.log(newReply);
           addReply(newReply);
 
         
         async function addReply(newReply){
             try {
-              let response = await axios.post(`http://127.0.0.1:8000/api/replies/${props.comment}`, newReply,{
+              let response = await axios.post(`http://127.0.0.1:8000/api/replies/${props.comment.id}/`, newReply,{
               
             });
             setReplies(response.data);

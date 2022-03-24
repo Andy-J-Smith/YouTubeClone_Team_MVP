@@ -7,18 +7,19 @@ import ReplyForm from "../ReplyForm/ReplyForm";
 
 const CommentForm = (props) => {
   const [user, setUser] = useState("");             //  getting data from form holding it for handleComment function below
-  const [comment, setComment] = useState("");       //^Hook//
+  const [comment, setComment] = useState([]);       //^Hook//
   const [video_id, setVideo_id] = useState("");
   const [comments, setComments] = useState("");
   const likes = 0;
   const dislikes = 0;
+
+  console.log(comment.id)
 
 
   function handleComment(event) {
                                                          //data staged before function calls//  
     event.preventDefault();                             //^prevents page from refreshing/reloading//
     let newComment = {
-      // user: props.user,
       text: comment,
       video_id: props.currentVideo,
       likes: likes,
@@ -58,21 +59,7 @@ const CommentForm = (props) => {
     }
   };
 
-  // useEffect(() => {
-  //   const addComment = async (newComment) => {
-  //     try {
-  //       let response = await axios.get("http://127.0.0.1:8000/api/comments/", {
-  //         headers: {
-  //           Authorization: "Bearer " + token,
-  //         },
-  //       });
-  //       setComment(response.data);
-  //     } catch (error) {
-  //       console.log(error.message);
-  //     }
-  //   };
-  //   fetchCars();
-  // }, [token]);
+
 
 
 
@@ -85,15 +72,11 @@ const CommentForm = (props) => {
 
   return (
     <form onSubmit={handleComment}>
-        {/* <label>user</label>
-        <input type="text" value={user} onChange={(event)=> setUser(event.target.value)} />
-        <label>videoId</label>
-        <input type="text" value={videoId} onChange={(event)=> setVideoId(event.target.value)} /> 
-        <label>comment</label> */}
+     
         <input type="text" value={comment} onChange={(event)=> setComment(event.target.value)} />
-        {/* <label>user</label> */}
+     
         <input type="submit" value='Add Comment' />
-        <ReplyForm comment={comment}/>
+        <ReplyForm comment={comment.id}/>
   
     </form>
 

@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 
 const CommentList = (props) => {
 
-    const [videoComment, setVideoComment] = useState('');
+    const [videoComment, setVideoComment] = useState([]);
 
     async function displayVideoComments () {
         let response = await axios.get(
@@ -22,7 +22,12 @@ const CommentList = (props) => {
     
     return (
         <div className='displayCommentList'>
-            <div><p className='comment'>{videoComment}</p></div>
+            {videoComment.map((videoComment, index)=> {
+                return (
+                    <div><p key={index} className='comment'>{videoComment}</p></div>
+
+                )
+            })}
 
         </div>
     )
