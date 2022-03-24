@@ -6,7 +6,7 @@ import axios from "axios";
 
 const ReplyForm = (props) => {
     const [user,setUser] = useState('');
-    const [replies,setReplies] = useState('');
+    const [replies, setReplies] = useState('');
 
 
     function handleReplies(event) {
@@ -25,7 +25,10 @@ const ReplyForm = (props) => {
         async function addReply(newReply){
             try {
               let response = await axios.post(`http://127.0.0.1:8000/api/replies/${props.comment.id}/`, newReply,{
-              
+              headers: {
+                  Authorization: "Bearer " + props.token,
+              },
+
             });
             setReplies(response.data);
            } catch (error){
