@@ -9,7 +9,7 @@ li {
 }
 
 .navBar {
-  background: steelblue;
+  background-color: rgb(17, 7, 7, .4);
   box-shadow: 4px 2px 5px gray;
   color: white;
   margin-bottom: 2rem;
