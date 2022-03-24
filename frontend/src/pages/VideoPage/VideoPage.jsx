@@ -6,10 +6,13 @@ import CommentList from "../../components/CommentList/CommentList";
 
 const VideoPage = (props) => {
   const [relatedVideo, setRelatedVideo] = useState();
+  const asApi = 'AIzaSyB--WnZi-41d2SSGsccN9FHWgPsp_Erh4I';
+  const afApi = 'AIzaSyBKkwwk2xjNqsE_mrtJ3q6zByuYJTbTJms';
+  const jpApi = 'AIzaSyBgDuwLRCEuSKbuXL_x1QED9vXNdipYR_M';
 
   async function getRelatedVideos() {
     let response = await axios.get(
-      `https://www.googleapis.com/youtube/v3/search?relatedToVideoId=${props.currentVideo}&type=video&key=AIzaSyB--WnZi-41d2SSGsccN9FHWgPsp_Erh4I&maxResults=3&part=snippet`
+      `https://www.googleapis.com/youtube/v3/search?relatedToVideoId=${props.currentVideo}&type=video&key=${jpApi}&maxResults=3&part=snippet`
     );
     console.log("Related Videos ", response.data);
     setRelatedVideo(response.data);
