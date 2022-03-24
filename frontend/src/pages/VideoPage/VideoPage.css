@@ -1,0 +1,4 @@
+.videoPlayer{
+    display: flex;
+    flex-direction: column;
+}

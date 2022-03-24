@@ -1,9 +1,11 @@
 .Header{
     display: flex;
+    flex-direction: column;
 
 }
 .container{
     display: flex;
+    flex-direction: column;
     background-color: rgb(44, 117, 180) ;
     align-items: center;
 }

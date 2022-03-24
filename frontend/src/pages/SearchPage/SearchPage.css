@@ -1,7 +1,9 @@
 .searchBar{
     display:flex;
-    flex-direction: row;
-    align-items:center;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    
     background-color: rgb(111, 219, 238,.3);
 }
 .SearchBar{
@@ -9,4 +11,14 @@
     flex-direction: row;
     align-items:center;
     background-color: rgb(111, 219, 238,.3);
+}
+
+.SearchBar > table > tbody > tr {
+    display: flex;
+    flex-direction: row;
+}
+
+.row {
+    display: flex;
+    flex-direction: column;
 }
