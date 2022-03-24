@@ -4,6 +4,7 @@ import CommentForm from "../../components/CommentForm/CommentForm";
 import axios from "axios";
 import useAuth from "../../hooks/useAuth";
 import VideoPage from "../VideoPage/VideoPage";
+import ReplyForm from "../../components/ReplyForm/ReplyForm";
 
 const HomePage = (props) => {
   // The "user" value from this Hook contains the decoded logged in user information (username, first name, id)
@@ -38,8 +39,9 @@ const HomePage = (props) => {
             {car.year} {car.model} {car.make}
           </p>
         ))}
-        <CommentForm user={user.username} currentVideo = {props.currentVideo} token = {token}/> //^passed down user from this page as props and current video from App.js as props to Commentform
-        <VideoPage currentVideo = {props.currentVideo}/>  //^passed currentVideo from App.js to VideoPage as props from this page.
+        <VideoPage currentVideo = {props.currentVideo}/> {/*  //^passed currentVideo from App.js to VideoPage as props from this page. */}
+        <CommentForm user={user.username} currentVideo = {props.currentVideo} token = {token}/> {/* //^passed down user from this page as props and current video from App.js as props to Commentform */}
+        <ReplyForm />
     </div>
   );
 };

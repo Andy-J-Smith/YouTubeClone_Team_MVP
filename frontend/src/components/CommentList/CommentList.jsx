@@ -3,14 +3,14 @@ import React, { useState, useEffect } from 'react';
 
 const CommentList = (props) => {
 
-    const [videoComment, setvideoComment] = useState('');
+    const [videoComment, setVideoComment] = useState('');
 
     async function displayVideoComments () {
         let response = await axios.get(
             `http://127.0.0.1:8000/api/comments/${props.currentVideo}`
         );
         console.log(response.data)
-        setvideoComment(response.data)
+        setVideoComment(response.data)
 
     }
   useEffect(() => {

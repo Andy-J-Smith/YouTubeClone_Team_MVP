@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import VideoPage from "../../pages/VideoPage/VideoPage";
+import ReplyForm from "../ReplyForm/ReplyForm";
 
 
 
@@ -92,7 +93,10 @@ const CommentForm = (props) => {
         <input type="text" value={comment} onChange={(event)=> setComment(event.target.value)} />
         {/* <label>user</label> */}
         <input type="submit" value='Add Comment' />
+        <ReplyForm comment={comment}/>
+  
     </form>
+
   
   )
 };

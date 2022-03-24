@@ -34,9 +34,9 @@ function App() {
           path="/"
           element={
             <PrivateRoute>
-              <HomePage currentVideo = {currentVideo}/>  //^passed currentVideo as props to homepage
-              {/* <VideoPage currentVideo = {currentVideo}/> */}
               <SearchPage setCurrentVideo = {setCurrentVideo}/>
+              <HomePage currentVideo = {currentVideo}/>  {/* //^passed currentVideo as props to homepage */}
+              {/* <VideoPage currentVideo = {currentVideo}/> */}
             </PrivateRoute>
           }
         />
