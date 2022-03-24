@@ -6,9 +6,9 @@ import CommentForm from "../../components/CommentForm/CommentForm";
 const VideoPage = (props) => {
   const [relatedVideo, setRelatedVideo] = useState();
 
-  async function getRelatedVideos(id) {
+  async function getRelatedVideos() {
     let response = await axios.get(
-      `https://www.googleapis.com/youtube/v3/search?relatedToVideoId=${id}&type=video&key=AIzaSyB--WnZi-41d2SSGsccN9FHWgPsp_Erh4I&maxResults=4&part=snippet`
+      `https://www.googleapis.com/youtube/v3/search?relatedToVideoId=${props.currentVideo}&type=video&key=AIzaSyB--WnZi-41d2SSGsccN9FHWgPsp_Erh4I&maxResults=3&part=snippet`
     );
     console.log("Related Videos ", response.data);
     setRelatedVideo(response.data);
@@ -16,8 +16,8 @@ const VideoPage = (props) => {
 
   
   useEffect(() => {
-   getRelatedVideos(props.currentVideo); //This is where we passed down the current video props from app.js
-    console.log(relatedVideo)
+   getRelatedVideos(relatedVideo); //This is where we passed down the current video props from app.js
+    console.log(relatedVideo)    //^need to find out why it is undefined
   },[props])
 
 
