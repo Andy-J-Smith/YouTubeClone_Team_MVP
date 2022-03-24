@@ -13,7 +13,7 @@ const Navbar = () => {
       <ul>
         <li className="brand">
           <Link to="/" style={{ textDecoration: "none", color: "white" }}>
-            <b>Team MVP YouTube Clone</b>
+            <b>Rick Rolled by TEAM MVP!!!</b>
           </Link>
         </li>
         <li>

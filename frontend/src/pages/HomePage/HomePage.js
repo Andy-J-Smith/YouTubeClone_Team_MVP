@@ -36,7 +36,7 @@ const HomePage = (props) => {
   return (
     <div className="container">
       {console.log('Props coming from App going to Home page', props.currentVideo)}
-      <h1 className = 'Header'>Welcome {user.username}!</h1>
+      <h1 className = 'Header'>Welcome to the Rick Astley Fanclub!</h1>
         <VideoPage currentVideo = {props.currentVideo} token = {token}/> {/*  //^passed currentVideo from App.js to VideoPage as props from this page. */}
        {/* <CommentForm user={user.username} currentVideo = {props.currentVideo} token = {token}/>  //^passed down user from this page as props and current video from App.js as props to Commentform */}
 

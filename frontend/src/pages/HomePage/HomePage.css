@@ -1,6 +1,8 @@
 .Header{
     display: flex;
     flex-direction: column;
+    color: rgb(250, 10, 178);
+    font-size:xx-large;
 
 }
 .container{

@@ -14,9 +14,9 @@ const handleSubmit = (event) => {
     
     <form className='formadjust'>
         <div>
-            <input type="text" placeholder="Search YouTube" value={searchRequest} onChange={(event)=> setSearchRequest(event.target.value)} />
+            <input type="text" placeholder="Search Rick Rolls! You won't!!" value={searchRequest} onChange={(event)=> setSearchRequest(event.target.value)} />
         </div>
-        <button className = 'buttonbutton' onClick={handleSubmit} type="submit">Search</button>
+        <button className = 'buttonbutton' onClick={handleSubmit} type="submit">Never gonna give you up?</button>
     </form>
     
     );
