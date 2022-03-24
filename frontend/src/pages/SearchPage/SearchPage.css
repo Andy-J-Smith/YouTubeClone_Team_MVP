@@ -1,0 +1,12 @@
+.searchBar{
+    display:flex;
+    flex-direction: row;
+    align-items:center;
+    background-color: rgb(111, 219, 238,.3);
+}
+.SearchBar{
+    display:flex;
+    flex-direction: row;
+    align-items:center;
+    background-color: rgb(111, 219, 238,.3);
+}

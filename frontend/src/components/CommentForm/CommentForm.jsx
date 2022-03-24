@@ -76,7 +76,7 @@ const CommentForm = (props) => {
         <input type="text" value={comment} onChange={(event)=> setComment(event.target.value)} />
      
         <input type="submit" value='Add Comment' />
-        <ReplyForm comment={comment.id}/>
+       
   
     </form>
 

@@ -50,6 +50,7 @@ const VideoPage = (props) => {
     </tbody>
   </table> */}
   {/* <CommentForm currentVideo = {props.currentVideo}/> */}
+  <CommentForm currentVideo = {props.currentVideo} token = {props.token} />
   <CommentList currentVideo={props.currentVideo}/>
     </div>
   );

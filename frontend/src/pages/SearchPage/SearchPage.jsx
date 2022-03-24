@@ -2,7 +2,7 @@ import { toHaveDescription } from "@testing-library/jest-dom/dist/matchers";
 import axios from "axios";
 import React, { useState, useEffect } from "react";
 import SearchBar from "../../components/SearchBar/SearchBar";
-import VideoPlayer from "../../components/VideoPlayer/VideoPlayer";
+import './SearchPage.css';
 
 const SearchPage = (props) => {
   const [searchResults, setSearchResults] = useState([]);
@@ -33,8 +33,8 @@ const handleClick = (event, id, title, description) => {
 
 
   return (
-    <div>
-      <SearchBar getSearchResults={getSearchResults} />
+    <div className='searchBar'>
+      <SearchBar className= 'SearchBar' getSearchResults={getSearchResults} />
        <table>
         <tbody>
           {searchResults.map((searchResults, index)=> {

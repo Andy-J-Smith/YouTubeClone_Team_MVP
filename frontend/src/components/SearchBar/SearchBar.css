@@ -1,0 +1,10 @@
+.formadjust{
+    display:flex;
+    flex-direction: row;
+    align-items: baseline;
+    
+}
+.buttonbutton{
+    display: flex;
+    align-items: flex-end;
+}

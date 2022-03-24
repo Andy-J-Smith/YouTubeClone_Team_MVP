@@ -5,6 +5,9 @@ import axios from "axios";
 import useAuth from "../../hooks/useAuth";
 import VideoPage from "../VideoPage/VideoPage";
 import ReplyForm from "../../components/ReplyForm/ReplyForm";
+import './HomePage.css';
+
+
 
 const HomePage = (props) => {
   // The "user" value from this Hook contains the decoded logged in user information (username, first name, id)
@@ -33,16 +36,10 @@ const HomePage = (props) => {
   return (
     <div className="container">
       {console.log('Props coming from App going to Home page', props.currentVideo)}
-      <h1>Home Page for {user.username}!</h1>
-      {cars &&
-        cars.map((car) => (
-          <p key={car.id}>
-            {car.year} {car.model} {car.make}
-          </p>
-        ))}
-        <VideoPage currentVideo = {props.currentVideo}/> {/*  //^passed currentVideo from App.js to VideoPage as props from this page. */}
-        <CommentForm user={user.username} currentVideo = {props.currentVideo} token = {token}/> {/* //^passed down user from this page as props and current video from App.js as props to Commentform */}
-        {/* <ReplyForm token={token}/> */}
+      <h1 className = 'Header'>Welcome {user.username}!</h1>
+        <VideoPage currentVideo = {props.currentVideo} token = {token}/> {/*  //^passed currentVideo from App.js to VideoPage as props from this page. */}
+       {/* <CommentForm user={user.username} currentVideo = {props.currentVideo} token = {token}/>  //^passed down user from this page as props and current video from App.js as props to Commentform */}
+
     </div>
   );
 };
