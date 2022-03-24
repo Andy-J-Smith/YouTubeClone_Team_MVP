@@ -21,10 +21,10 @@ const VideoPage = (props) => {
   }
 
   
-  // useEffect(() => {
-  //  getRelatedVideos(relatedVideo); //This is where we passed down the current video props from app.js
-  //   console.log(relatedVideo)    //^need to find out why it is undefined
-  // },[props])
+  useEffect(() => {
+   getRelatedVideos(relatedVideo); //This is where we passed down the current video props from app.js
+    console.log(relatedVideo)    //^need to find out why it is undefined
+  },[props])
 
 
   // const handleClick = (event, id, title, description) => {
