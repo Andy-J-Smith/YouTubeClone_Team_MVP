@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import VideoPage from "../../pages/VideoPage/VideoPage";
 import ReplyForm from "../ReplyForm/ReplyForm";
+import './CommentForm.css';
+
 
 
 
@@ -71,7 +73,7 @@ const CommentForm = (props) => {
   }
 
   return (
-    <form onSubmit={handleComment}>
+    <form className= 'formbox' onSubmit={handleComment}>
      
         <input type="text" value={comment} onChange={(event)=> setComment(event.target.value)} />
      
